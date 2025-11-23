@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Admin{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">
+        <i class="bi bi-speedometer2"></i> Dashboard Admin
+    </h2>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="stat-card">
+                <i class="bi bi-people" style="font-size: 2rem; color: var(--secondary-color);"></i>
+                <h3>{{ total_employees }}</h3>
+                <p>Tổng nhân viên</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="stat-card">
+                <i class="bi bi-person-check" style="font-size: 2rem; color: var(--success-color);"></i>
+                <h3>{{ active_employees }}</h3>
+                <p>Đang làm việc</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="stat-card">
+                <i class="bi bi-person-x" style="font-size: 2rem; color: var(--danger-color);"></i>
+                <h3>{{ total_employees - active_employees }}</h3>
+                <p>Đã nghỉ việc</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <a href="{{ url_for('admin.employees') }}" class="text-decoration-none">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="bi bi-people" style="font-size: 3rem; color: var(--primary-color);"></i>
+                        <h5 class="card-title mt-3">Quản lý nhân viên</h5>
+                        <p class="card-text text-muted">Thêm, sửa, xóa nhân viên</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 mb-3">
+            <a href="{{ url_for('admin.attendance') }}" class="text-decoration-none">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="bi bi-calendar-check" style="font-size: 3rem; color: var(--success-color);"></i>
+                        <h5 class="card-title mt-3">Quản lý chấm công</h5>
+                        <p class="card-text text-muted">Chấm công cho nhân viên</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 mb-3">
+            <a href="{{ url_for('admin.salary') }}" class="text-decoration-none">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="bi bi-cash-coin" style="font-size: 3rem; color: var(--warning-color);"></i>
+                        <h5 class="card-title mt-3">Tính lương</h5>
+                        <p class="card-text text-muted">Xem bảng lương theo tháng</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
