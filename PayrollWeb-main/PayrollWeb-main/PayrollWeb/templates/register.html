@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}Register - HRMS{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-7">
+                <div class="card login-card shadow-lg">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <i class="bi bi-person-plus-fill" style="font-size: 3rem; color: var(--primary-color);"></i>
+                            <h3 class="mt-3">Register account</h3>
+                            <p class="text-muted">Create new account in system</p>
+                        </div>
+
+                        <form method="POST" action="{{ url_for('auth.register') }}">
+                            <div class="mb-3">
+                                <label for="full_name" class="form-label">Full name <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-person"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="full_name" name="full_name" 
+                                           placeholder="Type in full name" required autofocus>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Mobile number</label>
+                                    <input type="text" class="form-control" id="phone" name="phone" 
+                                           placeholder="Mobile Number">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" 
+                                           placeholder="Email">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-person-circle"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="username" name="username" 
+                                           placeholder="Type in username" required>
+                                </div>
+                                <small class="text-muted">Username must have at least 4 characters</small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-lock"></i>
+                                    </span>
+                                    <input type="password" class="form-control" id="password" name="password" 
+                                           placeholder="Type in password" required>
+                                </div>
+                                <small class="text-muted">Password must have at least 6 characters</small>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="confirm_password" class="form-label">Password confirmation <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-lock-fill"></i>
+                                    </span>
+                                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" 
+                                           placeholder="Password confirmation" required>
+                                </div>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="bi bi-person-plus"></i> Register
+                                </button>
+                            </div>
+                        </form>
+
+                        <hr class="my-4">
+                        
+                        <div class="text-center">
+                            <p class="mb-0">Already have an account? 
+                                <a href="{{ url_for('auth.login') }}" class="text-decoration-none">
+                                    <strong>Log in now</strong>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

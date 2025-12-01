@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Add Attendance{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0"><i class="bi bi-plus-circle"></i> Add attendance</h4>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{{ url_for('admin.add_attendance') }}">
+                        <div class="mb-3">
+                            <label for="employee_id" class="form-label">Employee <span class="text-danger">*</span></label>
+                            <select class="form-select" id="employee_id" name="employee_id" required>
+                                <option value="">-- Choose employee --</option>
+                                {% for emp in employees %}
+                                <option value="{{ emp.id }}">{{ emp.full_name }} - {{ emp.position }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="work_date" class="form-label">Work day <span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" id="work_date" name="work_date" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="work_hours" class="form-label">Attendance/hour <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="work_hours" name="work_hours" 
+                                   step="0.5" min="0" max="24" required>
+                            <small class="text-muted">Example: 1, 0.5, 8</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="note" class="form-label">Note</label>
+                            <textarea class="form-control" id="note" name="note" rows="3"></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <a href="{{ url_for('admin.attendance') }}" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left"></i> Return
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-check-circle"></i> Add attendance
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
