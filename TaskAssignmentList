@@ -1,0 +1,78 @@
+Title: Task Assignment List
+
+- Backend: Implement Core API & DB
+
+  Labels: backend, api, high
+  Branch: feature/backend-core
+  Overview: Implement DB schema, ORM models, init_db.py, and REST endpoints for employees, attendance, and payroll calculation.
+
+  Checklist:
+Define DB schema / ER diagram
+Implement ORM models in models
+Create init_db.py migrations/setup
+Implement core routes in app.py (employees, attendance, salary)
+Implement payroll & salary calculation logic
+Add unit tests for core business logic
+Document API endpoints (OpenAPI/README)
+
+  Acceptance Criteria: Endpoints return JSON for CRUD flows; init_db.py initializes DB cleanly; payroll unit tests pass.
+
+- Frontend: Templates & Styling
+
+  Labels: frontend, ui, medium
+  Branch: feature/frontend-ui
+  Overview: Polish templates and responsive styles; build accessible forms for admin and employee flows.
+
+  Checklist:
+Improve layout in templates, admin, employee
+Implement responsive styles in style.css
+Build add/edit employee and attendance forms with client-side validation
+Ensure accessibility and mobile views
+Integrate templates with backend endpoints
+
+  Acceptance Criteria: Templates render correctly for roles; forms validate client-side and submit to backend.
+
+- Auth & Security: Login, RBAC, Hardening
+
+  Labels: security, auth, high
+  Branch: feature/auth-security
+  Overview: Implement secure register/login, password hashing, sessions, role-based access control, and basic hardening (CSRF, input validation).
+
+  Checklist:
+Implement register/login in auth.py
+Use password hashing (e.g., bcrypt) and secure session cookies
+Implement RBAC (admin vs employee) for protected routes
+Add CSRF protection and input validation
+Add tests for auth flows and protected routes
+
+  Acceptance Criteria: Secure login/register; admin-only routes blocked for employee roles; auth tests pass.
+
+- Features: Admin & Employee CRUD Flows
+
+  Labels: feature, admin, employee
+  Branch: feature/admin-employee
+  Overview: Implement admin CRUD for employees and attendance; employee-facing views and salary reporting.
+
+  Checklist:
+Implement admin CRUD for employees (admin.py)
+Implement attendance add/edit/delete flows and templates
+Implement employee views (employee.py)
+Wire salary generation/reporting to templates
+Add end-to-end tests for major flows
+
+  Acceptance Criteria: Admin can perform CRUD operations and generate reports; UI and DB stay in sync.
+
+- QA / Docs / DevOps: Tests, README, CI
+
+  Labels: docs, ci, testing
+  Branch: chore/qa-docs-devops
+  Overview: Provide tests, documentation, pinned deps, and CI suggestion for the project.
+
+  Checklist:
+Add unit and integration tests (pytest)
+Update README.md with run and deployment instructions
+Pin dependencies in requirements.txt
+Add simple run scripts / local setup instructions
+Provide GitHub Actions workflow example for tests
+
+  Acceptance Criteria: Tests run locally and in CI; README contains clear setup/run steps.
