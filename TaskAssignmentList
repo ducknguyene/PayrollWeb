@@ -1,6 +1,6 @@
 Title: Task Assignment List
 
-- Backend: Implement Core API & DB
+- Duc Anh - Backend: Implement Core API & DB 
 
   Labels: backend, api, high
   Branch: feature/backend-core
@@ -17,7 +17,7 @@ Document API endpoints (OpenAPI/README)
 
   Acceptance Criteria: Endpoints return JSON for CRUD flows; init_db.py initializes DB cleanly; payroll unit tests pass.
 
-- Frontend: Templates & Styling
+- Toan Phuc - Frontend: Templates & Styling 
 
   Labels: frontend, ui, medium
   Branch: feature/frontend-ui
@@ -32,7 +32,7 @@ Integrate templates with backend endpoints
 
   Acceptance Criteria: Templates render correctly for roles; forms validate client-side and submit to backend.
 
-- Auth & Security: Login, RBAC, Hardening
+- Toan - Auth & Security: Login, RBAC, Hardening
 
   Labels: security, auth, high
   Branch: feature/auth-security
@@ -47,7 +47,7 @@ Add tests for auth flows and protected routes
 
   Acceptance Criteria: Secure login/register; admin-only routes blocked for employee roles; auth tests pass.
 
-- Features: Admin & Employee CRUD Flows
+- Thinh - Features: Admin & Employee CRUD Flows
 
   Labels: feature, admin, employee
   Branch: feature/admin-employee
@@ -62,7 +62,7 @@ Add end-to-end tests for major flows
 
   Acceptance Criteria: Admin can perform CRUD operations and generate reports; UI and DB stay in sync.
 
-- QA / Docs / DevOps: Tests, README, CI
+- Ngoc - QA / Docs / DevOps: Tests, README, CI
 
   Labels: docs, ci, testing
   Branch: chore/qa-docs-devops
